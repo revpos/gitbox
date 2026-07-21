@@ -44,11 +44,13 @@ export GIT_PS1_HIDE_IF_PWD_IGNORED=1 # Hide inside .gitignore'd paths
 export GIT_PS1_DESCRIBE_STYLE="branch"
 export GIT_PS1_SHOWCONFLICTSTATE="yes" # Conflict state indicator
 
-# Load Git prompt script
-if [ -f /usr/lib/git-core/git-sh-prompt ]; then
+# Load Git prompt script (checks Alpine, Debian/Ubuntu, and home directory)
+if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
+    source /usr/share/git-core/contrib/completion/git-prompt.sh
+elif [ -f /usr/lib/git-core/git-sh-prompt ]; then
     source /usr/lib/git-core/git-sh-prompt
 elif [ -f ~/.git-prompt.sh ]; then
-    source ~/.git-prompt.sh
+    source /root/.git-prompt.sh
 fi
 
 # Set Bash Prompt

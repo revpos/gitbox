@@ -1,5 +1,5 @@
 # Variables
-IMAGE_NAME = gitbox:v2
+IMAGE_NAME = gitbox:v3
 CONTAINER_NAME = gitbox
 HOSTNAME = gitbox
 
