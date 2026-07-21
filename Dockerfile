@@ -19,9 +19,9 @@ WORKDIR /workspace
 RUN git config --global user.name "Git Learner" && \
     git config --global user.email "git.learner@example.com" && \
     git config --global init.defaultBranch main && \
-    git config --global color.ui auto \
-    git config --global alias.st "status -sb" \
-    git config --global alias.lg "log --oneline --graph --decorate --all"   
+    git config --global color.ui auto && \
+    git config --global alias.st "status -sb" && \
+    git config --global alias.lg "log --oneline --graph --decorate --all"
 
 # Copy git-prompt to integrate within bash shell prompt
 COPY git-prompt.sh /root/.git-prompt.sh
